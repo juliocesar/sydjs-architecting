@@ -1,0 +1,21 @@
+<h1 class="centered">First of all: scope!</h1>
+<p>
+  Scope is Javascript's closest mechanism to private methods. You can scope things away
+  in closures so they won't be visible everywhere.
+</p>
+<p>Like so</p>
+<script type="syntaxhighlighter" class="brush: js">
+<![CDATA[
+(function() {
+  function lightIt()  { console.log('=~~~~ <- cigar is lit')}
+  function puff()     { console.log('@@@@@  <- smoke puffs') }
+  function putOut()   { console.log('= <- no more smoke') }
+})()
+typeof puff   // => "undefined"
+typeof putOut // => "undefined"
+]]>
+</script>
+<p>
+  Don't be fooled though. Those methods exist, just not outside of that closure. So what we'll do
+  is we'll create "gateways" to the outside world that they can use.
+</p>

@@ -1,0 +1,27 @@
+<p>
+  As I explained before, we need a global object though which we can access those methods that sit 
+  inside the closure.
+</p>
+<p>So to keep on with our previous bit:</p>
+<script type="syntaxhighlighter" class="brush: js">
+<![CDATA[
+(function() {
+  Cigar = {};
+  
+  function lightIt()  { console.log('=~~~~ <- cigar is lit')}
+  function puff()     { console.log('@@@@@  <- smoke puffs') }
+  function putOut()   { console.log('= <- no more smoke') }
+  Cigar.lightIt = lightIt,
+    Cigar.puff = puff,
+    Cigar.putOut = putOut;
+})()
+
+typeof Cigar      // "object"
+typeof Cigar.puff // "function"
+Cigar.lightIt()   // "=~~~~ <- cigar is lit"
+]]>
+</script>
+<p>
+  Note that we declared <em>Cigar</em> without <em>var</em>. Javascript will chuck that in the global scope because
+  of that, which is what we want.
+</p>

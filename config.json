@@ -1,0 +1,17 @@
+{
+  "plugins": [
+    "resize",
+    "syntaxhighlighter",
+    "iphone"
+  ],
+  "transitions": "fade",
+  "title": "Your presentation",
+  "slides": [
+    "welcome.haml",
+    "architecting.haml",
+    "old.html",
+    "wewant.haml",
+    "first.html",
+    "object.html"
+  ]
+}
