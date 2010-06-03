@@ -5,7 +5,7 @@
     "iphone"
   ],
   "transitions": "fade",
-  "title": "Your presentation",
+  "title": "Architecting Javascript Apps",
   "slides": [
     "welcome.haml",
     "architecting.haml",
