@@ -4,7 +4,7 @@
     "syntaxhighlighter",
     "iphone"
   ],
-  "transitions": "fade",
+  "transitions": "slice",
   "title": "Architecting Javascript Apps",
   "slides": [
     "welcome.haml",
@@ -15,6 +15,9 @@
     "object.html",
     "nicelypackaged.html",
     "classes.html",
-    "testability.html"
+    "testability.html",
+    "exceptions.html",
+    "summary.html",
+    "thanks.html"
   ]
 }

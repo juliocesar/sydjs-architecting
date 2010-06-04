@@ -2,7 +2,7 @@
 <p>Humm...</p>
 <p>
   Some kinds of tests in Javascript are <em>hard</em> to do. If you come from Ruby,
-  you won't find half of the tools and quality.
+  you won't find half the tools and quality.
 </p>
 <p>
   That's because Javascript is a lot more constrained than Ruby. Sucks, but we gotta
@@ -14,8 +14,9 @@
 <script type="syntaxhighlighter" class="brush: js">
 <![CDATA[
 (function() {
+  // ^ rest of our program
   Cigar.private = {};
-  with (Cigar) { private.lightIt = Cigar.lightIt }
+  with (Cigar) { private.lightIt = lightIt };
 )()
 ]]>
 </script>
@@ -24,5 +25,5 @@
   less fine grained since you're only testing outcomes, but does the job.
 </p>
 <p>
-  Or test it the old fashioned way. You'll catch more problems anyways.
+  Or test it the old fashioned way. You'll catch more problems as a bonus.
 </p>
