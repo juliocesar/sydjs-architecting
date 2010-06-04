@@ -1,0 +1,22 @@
+<p>
+  So now what you have is a nicely packaged container which exposes 
+  only what it needs to.  
+</p>
+<p>
+  Pretend our previous program was any useful, if someone wanted to hook
+  links or button clicks to it with jQuery, it would look like this:  
+</p>
+<script type="syntaxhighlighter" class="brush: js">
+<![CDATA[
+  $('a#smoke-it').click(Cigar.puff)
+  $('a#done').click(Cigar.putItOut);
+]]>
+</script>
+<p>
+  That will remind Rubyists of class methods. You could perhaps think of it
+  as such, but in reality it isn't. And that doesn't matter really.
+</p>
+<p>
+  We're better off with something nice to use and readable than something
+  that sticks to a standard.
+</p>

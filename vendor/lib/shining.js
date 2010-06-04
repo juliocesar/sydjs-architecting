@@ -199,6 +199,7 @@
       bindKeys();
       when('previous',  function() { help('←') });
       when('next',      function() { help('→') });
+      when('slideplay', function() { loadSlideStyle(arguments[1]) });
       $(window).bind('hashchange', function(event) {
         var slide = document.location.hash.replace('#', '');
         if (slide) { Shining.getSlide(slide) };
@@ -273,16 +274,14 @@
         function(data) {
           Shining.slides._loaded[name] = {};
           Shining.slides._loaded[name].markup = compileSlide(name, data);
-          trigger('loaded', [name]);
+          trigger('slideloaded', [name]);
           if (data) {
             loadSlideScript(name, afterLoad);
-            loadSlideStyle(name);
           }
         }
       );
     } else {
       if ($.isFunction(afterLoad)) afterLoad.call();
-      loadSlideStyle(name);
     }
   }
 
@@ -294,6 +293,7 @@
     var slide = Shining.slides._loaded[name];
     Shining.slides.current(name);
     $('#stage .contents').html(slide.markup);
+    $('#stage img').each(function() { $(this).load(function() { centerStage() }) });
     trigger('slideplay', [name]);
     $(window).trigger('resize');
     Shining.scripts.run(slide.script);
@@ -321,7 +321,8 @@
 
   function loadSlideStyle(name) {
     $('link.slide').remove();
-    $('head').append('<link rel="stylesheet" type="text/css" href="' + slidePlusExtension(name, 'css') + '" media="all" class="slide"/>')
+    console.log(slidePlusExtension(name, 'css'))
+    $('head').append('<link rel="stylesheet" type="text/css" href="' + slidePath(slidePlusExtension(name, 'css')) + '" media="all" class="slide"/>')
   }
 
   function loadConfig(callback) {

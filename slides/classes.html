@@ -1,0 +1,32 @@
+<h1 class="centered">But what about classes/OOP?</h1>
+<p>
+  Yes you can. Though that doesn't mean you should!
+</p>
+<p>
+  Anyways:
+</p>
+<script type="syntaxhighlighter" class="brush: js">
+<![CDATA[
+(function() {
+  Cigar = function() {
+    this.lit = false;
+  }
+  Cigar.prototype = {
+    lightIt:  function() { this.lit = true },
+    puff:     function() { if (!this.lit) this.lightIt() },
+    putOut:   function() { this.lit = false }
+  };  
+})()
+var ciggie = new Cigar();
+ciggie.lit // false
+ciggie.lightIt() // ciggie.lit => true
+]]>
+</script>
+<p>
+  In practice, the difference is that now we have to instance our Cigar before
+  being able to use it.
+</p>
+<p>
+  Nothing essentially wrong with it. If you could potentially have your app running
+  on more than once place at the same time in the screen, that's a good case.
+</p>
