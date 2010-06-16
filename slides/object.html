@@ -2,7 +2,7 @@
   We need a global object though which we can access those methods that sit 
   inside the closure.
 </p>
-<p>To keep on with our previous bit:</p>
+<p>To keep on with our previous idea:</p>
 <script type="syntaxhighlighter" class="brush: js">
 <![CDATA[
 (function() {
@@ -28,6 +28,6 @@ Cigar.puff()   // "=~~~~ <- cigar is lit"
 ]]>
 </script>
 <p>
-  Note that we declared <em>Cigar</em> without <em>var</em>. Javascript will chuck that in the global scope because
-  of that, which is what we want.
+  Note that we declared <em>Cigar</em> without <em>var</em>. Javascript will then put that in the global scope,
+  which is what we want.
 </p>
