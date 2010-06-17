@@ -321,7 +321,6 @@
 
   function loadSlideStyle(name) {
     $('link.slide').remove();
-    console.log(slidePlusExtension(name, 'css'))
     $('head').append('<link rel="stylesheet" type="text/css" href="' + slidePath(slidePlusExtension(name, 'css')) + '" media="all" class="slide"/>')
   }
 
